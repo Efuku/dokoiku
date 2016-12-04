@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161203164514) do
     t.datetime "updated_at"
   end
 
-  create_table "get_plans", force: :cascade do |t|
+  create_table "plans", force: :cascade do |t|
     t.string   "destination",      limit: 255
     t.string   "season",           limit: 255
     t.string   "number_of_nights", limit: 255

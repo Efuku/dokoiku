@@ -1,4 +1,4 @@
-class GetPlan < ActiveRecord::Base
+class Plan < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 end
