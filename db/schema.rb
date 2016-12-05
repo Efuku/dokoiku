@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20161203164514) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
-    t.integer  "get_plans_id",  limit: 4
+    t.integer  "plans_id",      limit: 4
     t.text     "text",          limit: 65535
     t.string   "reference_url", limit: 255
     t.datetime "created_at"
