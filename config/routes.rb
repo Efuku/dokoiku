@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   get "/index" => 'plans#index'
-
+  get "/index/new" => 'plans#new'
+  post "/index/create" => 'plans#create'
 
 
 
