@@ -24,7 +24,12 @@ h1, h2, h3, h4, h5, h6, p, body {
 header{
   height: 46px;
   background-color: white;
-  /*border-bottom: 2px solid #bbb;*/
+}
+footer{
+  height: 20px;
+  background-color: white;
+  text-align: center;
+  margin-top: 5px;
 }
 
 h1{
