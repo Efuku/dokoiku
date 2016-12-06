@@ -3,4 +3,5 @@ class PlansController < ApplicationController
     
   end
   
+>>>>>>> make_controller
 end
