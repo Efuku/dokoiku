@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/index" => 'plans#index'
   get "/index/new" => 'plans#new'
-  post "/index/create" => 'plans#create'
+  post "/index/new" => 'plans#create'
 
 
 
