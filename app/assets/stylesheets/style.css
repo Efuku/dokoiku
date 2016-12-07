@@ -47,9 +47,30 @@ h2{
 }
 
 .contents{
-  height: 100%;
+  min-height: 600px;
   width: 600px;
   margin: 5px auto 0;
   background-color: white;
 }
+
+table , td, th {
+  border: 1px solid #595959;
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+td, th {
+  padding: 3px;
+  width: 200px;
+  height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
 
