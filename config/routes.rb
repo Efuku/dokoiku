@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root to:'top#index'
-  devise_for :users
+  # devise_for :users
 
-  get "/index" => 'plans#index'
-  get "/index/new" => 'plans#new'
-  post "/index/new" => 'plans#create'
+  resources :plans
+  # get "/plans/index" => 'plans#index'
+  # get "/plans/new" => 'plans#new'
+  # post "/plans/new" => 'plans#create'
 
 
 
