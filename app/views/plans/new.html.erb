@@ -9,8 +9,18 @@
 <div class="contents">
   <h2>プラン提案を受けるための情報を入力</h2>
 
-  <!-- form_forの記載方法がわからない -->
-  <!-- そもそもの定義もできてるのかしら -->
+    <%= form_for(@plan) do |f| %>
+      <%= f.text_field :destination, placeholder: '行先' %>
+      <%= f.text_field :season, placeholder: '時期' %>
+      <%= f.text_field :number_of_nights, placeholder: '泊数' %>
+      <%= f.text_field :transportation, placeholder: '交通手段' %>
+      <%= f.text_field :budget, placeholder: '予算' %>
+      <%= f.text_area :remarks, :maxlemgtth => "100", placeholder: '備考 100文字まで' %>
+      <%= f.submit('投稿する') %>
+
+
+
+    <% end %>
 
 
 </div>
