@@ -1,3 +1,9 @@
 <div class="contents">
-  <p>提案されたプランの一覧を表示する</p>
+  <% @plans.each do |plan| %>
+    
+
+
+
+  <% end %>
+  <%= paginate(@plans) %>
 </div>

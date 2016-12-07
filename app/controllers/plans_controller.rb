@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   def index
-   @plans = Plan.order('created_at DESC').limit(5)
+   @plans = Plan.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new   #投稿画面の作成
