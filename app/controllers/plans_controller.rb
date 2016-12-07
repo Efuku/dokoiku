@@ -13,7 +13,7 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
-    #コメントを追加するための処理的なものを
+    @comments = @plan.comments
   end
 
 

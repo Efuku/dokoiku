@@ -27,6 +27,18 @@
       </tr>
     </table>
 
+  <div class="comments">
+    <p>コメント一覧</p>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+        <p>
+          <%= comment.text %><br>
+          <%= comment.reference_url %>
+        </p>
+
+        <% end %>
+      <% end %>
+  </div>
 
 
 
