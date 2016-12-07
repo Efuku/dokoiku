@@ -8,7 +8,14 @@ class PlansController < ApplicationController
   end
 
   def create    #投稿の処理
+    Plan.create(create_params)
   end
 
+
+  private
+  def create_params
+    params.require(:plan).permit(:destination, :season, :number_of_nights, :transportation, :budget, :remarks)
+    
+  end
 
 end
