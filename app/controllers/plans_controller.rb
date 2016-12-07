@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   def index
-   @plans = Plan.order('created_at DESC').limit(10)
+   @plans = Plan.order('created_at DESC').limit(5)
   end
 
   def new   #投稿画面の作成
@@ -9,6 +9,11 @@ class PlansController < ApplicationController
 
   def create    #投稿の処理
     Plan.create(create_params)
+  end
+
+  def show
+    @plan = Plan.find(params[:id])
+    #コメントを追加するための処理的なものを
   end
 
 
