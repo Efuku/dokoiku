@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   def index
-   @plans = Plan.order('created_at DESC').limit(5)
+   @plans = Plan.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new   #投稿画面の作成
@@ -12,6 +12,7 @@ class PlansController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @plan = Plan.find(params[:id])
     @comments = @plan.comments
   end
@@ -20,7 +21,6 @@ class PlansController < ApplicationController
   private
   def create_params
     params.require(:plan).permit(:destination, :season, :number_of_nights, :transportation, :budget, :remarks)
-    
   end
 
 end
