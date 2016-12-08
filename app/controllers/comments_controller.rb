@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
+
 def create
-  @comment = Comment.create(text: params[:text], reference_url: params[:reference_url], plan_id: params[:plan_id])
+  @comment = Comment.create(create_params)
 end
 
 private
-def comment_params
-  params.permit(:text, :reference_url, :plan_id)
-  
+def create_params
+  params.require(:comment).permit(:text, :reference_url).merge(plan_id: params[:plan_id])
 end
 
 
