@@ -1,6 +1,6 @@
 body, html {
   height: 100%;
-  background-color: #ddd;
+  background-color: white;
 }
 
 h1, h2, h3, h4, h5, h6, p, body {
@@ -51,6 +51,7 @@ h2{
   width: 600px;
   margin: 5px auto 0;
   background-color: white;
+  text-align: center;
 }
 
 table , td, th {
@@ -63,6 +64,7 @@ td, th {
   width: 200px;
   height: 25px;
 }
+
 
 
 
