@@ -31,7 +31,7 @@
     <br>
     <h2>コメント入力</h2>
     <%= form_for [@plan, @comment] do |f| %>
-      <%= f.text_area :text, placeholder: '旅程を入れてください' %>
+      <%= f.text_area :text, placeholder: '提案する旅程を入れてください' %>
       <%= f.text_field :reference_url, placeholder: '参考URL' %>
       <%= f.submit('投稿する') %>
 
@@ -45,16 +45,17 @@
         <p>
           コメント：
           <%= comment.text %><br>
-          参考URL:
 
-          <%= comment.reference_url %>
+          <a href="<%= comment.reference_url %>">参考URL</a>
         </p>
 
         <% end %>
       <% end %>
+      <br>
+      <br>
 
 
-
+      <a href="/plans">新着一覧へ戻る</a>
 
 
 
