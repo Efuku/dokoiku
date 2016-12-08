@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   }
 
 header{
-  height: 46px;
+  height: 90px;
   background-color: white;
 }
 footer{
@@ -63,8 +63,6 @@ td, th {
   width: 200px;
   height: 25px;
 }
-
-
 
 
 
