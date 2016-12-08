@@ -27,18 +27,31 @@
       </tr>
     </table>
 
-  <div class="comments">
-    <p>コメント一覧</p>
+<!-- ここのエラーが出るところから！ -->
+    <br>
+    <h2>コメント入力</h2>
+    <%= form_for [@plan, @comment] do |f| %>
+      <%= f.text_area :text, placeholder: '旅程を入れてください' %>
+      <%= f.text_field :reference_url, placeholder: '参考URL' %>
+      <%= f.submit('投稿する') %>
+
+    <% end %>
+
+<!-- ここまでコメント入力欄 -->
+
+    <h2>コメント一覧</h2>
       <% if @comments %>
         <% @comments.each do |comment| %>
         <p>
+          コメント：
           <%= comment.text %><br>
+          参考URL:
+
           <%= comment.reference_url %>
         </p>
 
         <% end %>
       <% end %>
-  </div>
 
 
 
