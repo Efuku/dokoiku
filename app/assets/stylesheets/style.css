@@ -25,6 +25,14 @@ header{
   height: 90px;
   background-color: white;
 }
+
+.header_nav{
+  height: 30px;
+  float: right;
+  background-color: white;
+}
+
+
 footer{
   height: 20px;
   background-color: white;
@@ -36,7 +44,7 @@ h1{
   height: 46px;
   line-height: 46px;
   font-size: 18px;
-  text-align: center;
+  
 }
 
 h2{
