@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :nickname %> <em>(8文字まで)</em><br />
+    <%= f.text_field :nickname, autofocus: true, maxlength: "8" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -20,6 +25,17 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :residential_areas %><em>（住んでいる都道府県）</em><br />
+    <%= f.text_field :residential_areas, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_area :introduction, autofocus: true %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
