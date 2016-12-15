@@ -11,7 +11,7 @@ before_action :move_to_root, except: :index
   end
 
   def create    #投稿の処理
-    Plan.create(create_params)
+    Plan.create(destination: create_params[:destination], season: create_params[:season], number_of_nights: create_params[:number_of_nights], transportation: create_params[:transportation], budget: create_params[:budget], remarks: create_params[:remarks], user_id: current_user.id)
   end
 
   def show
