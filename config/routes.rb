@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :comments, only: [:create]
+
+
   end
+  resources :users
   # get "/plans/index" => 'plans#index'
   # get "/plans/new" => 'plans#new'
   # post "/plans/new" => 'plans#create'
