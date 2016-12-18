@@ -11,7 +11,7 @@ before_action :move_to_root, except: :index
   end
 
   def create    #投稿の処理
-    Plan.create(destination: create_params[:destination], season: create_params[:season], number_of_nights: create_params[:number_of_nights], transportation: create_params[:transportation], budget: create_params[:budget], remarks: create_params[:remarks], user_id: current_user.id)
+    Plan.create(destination: create_params[:destination], month: create_params[:month], season: create_params[:season], number_of_nights: create_params[:number_of_nights], transportation: create_params[:transportation], budget: create_params[:budget], remarks: create_params[:remarks], user_id: current_user.id)
   end
 
   def show
@@ -23,7 +23,7 @@ before_action :move_to_root, except: :index
 
   private
   def create_params
-    params.require(:plan).permit(:destination, :season, :number_of_nights, :transportation, :budget, :remarks)
+    params.require(:plan).permit(:destination, :month, :season, :number_of_nights, :transportation, :budget, :remarks)
   end
 
   def move_to_root
