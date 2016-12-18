@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
          has_many :plans
          has_many :comments
+         has_many :suggestions
+         has_many :reports
 end
