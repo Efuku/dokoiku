@@ -11,6 +11,7 @@
 
     <%= form_for(@plan) do |f| %>
       <%= f.text_field :destination, placeholder: '行先' %>
+      <%= f.text_field :month, placeholder: '月' %>
       <%= f.text_field :season, placeholder: '時期' %>
       <%= f.text_field :number_of_nights, placeholder: '泊数' %>
       <%= f.text_field :transportation, placeholder: '交通手段' %>
