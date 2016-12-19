@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :plans do
-    resources :comments, only: [:create]
-
-
+    resources :suggestions, only:[:create]
   end
+  # resources :plans do
+  #   resources :comments, only: [:create]
+  # end
+
+  resources :suggestions, only: [:index]
   resources :users
   # get "/plans/index" => 'plans#index'
   # get "/plans/new" => 'plans#new'
