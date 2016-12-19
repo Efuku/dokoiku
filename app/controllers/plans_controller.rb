@@ -15,10 +15,16 @@ before_action :move_to_root, except: :index
   end
 
   def show
-    @comment = Comment.new
     @plan = Plan.find(params[:id])
-    @comments = @plan.comments
+    @suggestion = Suggestion.new
+    @suggestions = @plan.suggestions
   end
+
+  # def show
+  #   @comment = Comment.new
+  #   @plan = Plan.find(params[:id])
+  #   @comments = @plan.comments
+  # end
 
 
   private
