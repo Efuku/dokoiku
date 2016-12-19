@@ -10,13 +10,15 @@
   <h2>プラン提案を受けるための情報を入力</h2>
 
     <%= form_for(@plan) do |f| %>
-      <%= f.text_field :destination, placeholder: '行先' %>
-      <%= f.text_field :month, placeholder: '月' %>
-      <%= f.text_field :season, placeholder: '時期' %>
-      <%= f.text_field :number_of_nights, placeholder: '泊数' %>
-      <%= f.text_field :transportation, placeholder: '交通手段' %>
-      <%= f.text_field :budget, placeholder: '予算' %>
-      <%= f.text_area :remarks, :maxlemgtth => "100", placeholder: '備考 100文字まで', :size => "50×10" %>
+      <%= f.select :destination, ['茨城', '栃木', '群馬', '埼玉', '千葉', '東京', '神奈川'], {include_blank: '行き先を選択'} %>
+      <%= f.select :month, ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '未定'], include_blank: '月を選択' %>
+      <%= f.select :season, ['上旬', '中旬', '下旬', '未定'], include_blank: '時期を選択' %>
+      <%= f.select :number_of_nights, ['日帰り', '１泊', '２泊以上', '未定'], include_blank: '泊数を選択' %>
+      <%= f.select :transportation, ['電車・バス', '車', 'バイク', '自転車', '徒歩のみ'], include_blank: '交通手段を選択' %>
+      <%= f.select :budget, ['５千円以下', '１万円まで', '３万円まで', '３万円以上'], include_blank: '予算を選択' %>
+      <%= f.text_area :remarks, :maxlemgtth => "500", placeholder: '備考 500文字まで', :size => "80×20" %>
+
+      
       <%= f.submit('投稿する') %>
 
 
