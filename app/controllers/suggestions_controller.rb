@@ -6,7 +6,7 @@ class SuggestionsController < ApplicationController
 
   private
   def create_params
-    params.require(:suggestion).permit(:text, :reference_url).merge(plan_id: params[:plan_id])
+    params.require(:suggestion).permit(:text, :reference_url).merge(plan_id: params[:plan_id], user_id: current_user.id)
     
   end
 
