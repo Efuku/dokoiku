@@ -3,11 +3,11 @@
     <table>
       <tr>
         <td>投稿者</td>
-        <td><%= @user.nickname %> さん</td>
+        <td><%= @plan_user.nickname %> さん</td>
       </tr>
       <tr>
         <td>出発地</td>
-        <td><%= @user.residential_areas %></td>
+        <td><%= @plan_user.residential_areas %></td>
       </tr>
       <tr>
         <td>行先</td>
@@ -51,6 +51,8 @@
       <% if @suggestions %>
         <% @suggestions.each do |suggestion| %>
         <p>
+       
+        <br>
           コメント：
           <%= suggestion.text %><br>
 
