@@ -2,6 +2,14 @@
       <h2>要望詳細</h2>
     <table>
       <tr>
+        <td>投稿者</td>
+        <td><%= @user.nickname %> さん</td>
+      </tr>
+      <tr>
+        <td>出発地</td>
+        <td><%= @user.residential_areas %></td>
+      </tr>
+      <tr>
         <td>行先</td>
         <td><%= @plan.destination %></td>
       </tr>

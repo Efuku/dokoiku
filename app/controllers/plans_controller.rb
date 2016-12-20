@@ -18,6 +18,7 @@ before_action :move_to_root, except: :index
     @plan = Plan.find(params[:id])
     @suggestion = Suggestion.new
     @suggestions = @plan.suggestions
+    @user = @plan.user
   end
 
   # def show
