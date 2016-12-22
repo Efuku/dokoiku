@@ -3,11 +3,11 @@
     <table>
       <tr>
         <td>投稿者</td>
-        <td><%= @plan_user.nickname %> さん</td>
+        <td><%= @plan.user.nickname %> さん</td>
       </tr>
       <tr>
         <td>出発地</td>
-        <td><%= @plan_user.residential_areas %></td>
+        <td><%= @plan.user.residential_areas %></td>
       </tr>
       <tr>
         <td>行先</td>
@@ -35,9 +35,8 @@
       </tr>
     </table>
 
-<!-- ここのエラーが出るところから！ -->
     <br>
-    <h2>コメント入力</h2>
+    <h2>提案入力</h2>
     <%= form_for [@plan, @suggestion] do |f| %>
       <%= f.text_area :text, placeholder: '提案する旅程を入れてください', :size => "50×10" %>
       <%= f.text_field :reference_url, placeholder: '参考URL' %>
@@ -47,14 +46,15 @@
 
 
 
-    <h2>コメント一覧</h2>
+    <h2>提案一覧</h2>
       <% if @suggestions %>
         <% @suggestions.each do |suggestion| %>
         <p>
        
         <br>
-          コメント：
+          提案内容：
           <%= suggestion.text %><br>
+          投稿者：<%= suggestion.user.nickname %>　　
 
           <a href="<%= suggestion.reference_url %>">参考URL</a>
         </p>

@@ -18,8 +18,9 @@ before_action :move_to_root, except: :index
     @plan = Plan.find(params[:id])
     @suggestion = Suggestion.new
     @suggestions = @plan.suggestions
-    @plan_user = @plan.user
+    # @plan_user = @plan.user
     # @sug = 　ここにsuggestionxテーブルのidを引っ張ってくるのを描きたい
+    #書く必要はなかった。viewで対応する
     # @suggestion_user = @sug.user
   end
 
