@@ -1,5 +1,26 @@
 <div class="contents">
-  <p>
-    旅行記一覧
-  </p>
+  <h2>旅行記一覧</h2>
+    <% @reports.each do |report| %>
+    <a href="/reports/<%= report.id %>">
+      <table>
+        <tr>
+          <td>行き先</td>
+          <td><%= report.destination %></td>
+        </tr>
+        <tr>
+          <td>時期</td>
+          <td><%= report.month %><%= report.season %></td>
+        </tr>
+        <tr>
+          <td>泊数</td>
+          <td><%= report.number_of_nights %></td>
+        </tr>
+
+
+
+      </table>
+    </a>
+    <% end %>
+    <%= paginate(@reports) %>
+  <a href="/">Topへ戻る</a>
 </div>

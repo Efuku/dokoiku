@@ -1,5 +1,26 @@
 <div class="contents">
-  <p>
-    旅行記を投稿してください
-  </p>
+  <h2>旅行記を投稿してください</h2>
+
+    <%= form_for(@report) do |f| %>
+      <%= f.select :destination, ['茨城', '栃木', '群馬', '埼玉', '千葉', '東京', '神奈川'], {include_blank: '行き先を選択'} %>
+      <%= f.select :month, ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'], include_blank: '月を選択' %>
+      <%= f.select :season, ['上旬', '中旬', '下旬',], include_blank: '時期を選択' %>
+      <%= f.select :number_of_nights, ['日帰り', '１泊', '２泊以上',], include_blank: '泊数を選択' %>
+      <%= f.select :transportation, ['電車・バス', '車', 'バイク', '自転車', '徒歩のみ'], include_blank: '交通手段を選択' %>
+      <%= f.select :budget, ['５千円以下', '１万円まで', '３万円まで', '３万円以上'], include_blank: '予算を選択' %>
+      <%= f.text_area :text, placeholder: '旅行記を入力してください', :size => "80×20" %>
+
+      
+      <%= f.submit('投稿する') %>
+
+
+
+    <% end %>
+    <br>
+    <br>
+  <a href="/">Topへ戻る</a>
+
+
+
 </div>
+  </body>
