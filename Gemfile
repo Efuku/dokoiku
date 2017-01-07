@@ -23,6 +23,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'paperclip', '4.3.0'
+
+gem 'pry-rails'
+gem 'compass-rails','~> 2.0'
+gem 'sprockets', '2.11.0'
+gem 'devise'
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,14 +53,8 @@ group :development do
   gem 'spring'
 end
 
-  gem 'pry-rails'
-  gem 'compass-rails','~> 2.0'
-  gem 'sprockets', '2.11.0'
-  gem 'devise'
-  gem 'kaminari'
-  group :production, :staging do
+group :production, :staging do
   gem 'rails_12factor'
-  gem 'paperclip'
 end
 
 
