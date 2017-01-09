@@ -4,36 +4,37 @@
 
   <p><%=current_user.nickname %>の行きたいところ</p>
   <% current_user.plans.each do |plan| %>
-
+  <a href="/plans/<%= plan.id %>">
   <%= plan.destination %>
-  
+  </a>
 
   <% end %>
-<p>ここからplanの一覧にリンク飛ばせるかな</p>
+
 
 <p><%= current_user.nickname %>さんの提案</p>
 
   <% current_user.suggestions.each do |suggestion| %>
   
-  <%= suggestion.plan_id %>
-
+  <a href="/plans/<%= suggestion.plan.id %>">
+  <%= suggestion.plan.destination %>
+  </a>
   <% end %>
-  <p>ここにplanから行き先を引っ張ってきたい</p>
+
   <br>
 
 
 <p><%= current_user.nickname %>さんの旅行記一覧</p>
 
   <% current_user.reports.each do |report| %>
-
+  <a href="/reports/<%= report.id %>">
   <%= report.destination %>
+  </a>
 
   <% end %>
   <p>ここから旅行記一覧に飛びたい</p>
 <br>
 
-  <a href="/reports">旅行記一覧へ</a>
-  <p>※現在は<%= current_user.nickname %>さんの旅行記一覧ではなく、全体の旅行記一覧へリンクします。<br>
+
   <a href="/reports/new">旅行記の投稿</a>
 
   </p>
