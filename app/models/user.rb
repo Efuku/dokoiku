@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :nickname, presence: true
 
         has_attached_file :avatar,
                             styles: {medium: "100x100#", thumb: "100x100#"}
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
          has_many :comments
          has_many :suggestions
          has_many :reports
+
 
 
 
