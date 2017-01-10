@@ -37,6 +37,7 @@
 
     <% if user_signed_in? && current_user.id == @plan.user_id %>
     <%= link_to '削除', "#{@plan.id}", method: :delete %>
+    <%= link_to '編集', "#{@plan.id}/edit", method: :get %>
     <% end %>
 
     <br>
@@ -56,11 +57,12 @@
         <p>
        
         <br>
-          提案内容：
+          投稿者：<%= suggestion.user.nickname %>さん　　<a href="<%= suggestion.reference_url %>">参考URL</a><br>
+          提案内容：　　
           <%= simple_format(suggestion.text) %><br>
-          投稿者：<%= suggestion.user.nickname %>　　
+          
 
-          <a href="<%= suggestion.reference_url %>">参考URL</a>
+          
         </p>
 
         <% end %>
