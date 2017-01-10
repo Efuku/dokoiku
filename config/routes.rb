@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :suggestions, only:[:create]
+    collection do
+      get 'search'
+    end
   end
   # resources :plans do
   #   resources :comments, only: [:create]

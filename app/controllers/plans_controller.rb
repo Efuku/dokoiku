@@ -11,7 +11,7 @@ before_action :move_to_root, except: :index
   end
 
   def create    #投稿の処理
-    Plan.create(destination: create_params[:destination], month: create_params[:month], season: create_params[:season], number_of_nights: create_params[:number_of_nights], transportation: create_params[:transportation], budget: create_params[:budget], remarks: create_params[:remarks], user_id: current_user.id)
+    Plan.create(destination: plan_params[:destination], month: plan_params[:month], season: plan_params[:season], number_of_nights: plan_params[:number_of_nights], transportation: plan_params[:transportation], budget: plan_params[:budget], remarks: plan_params[:remarks], user_id: current_user.id)
   end
 
   def show
@@ -24,12 +24,26 @@ before_action :move_to_root, except: :index
   def destroy
     plan = Plan.find(params[:id])
     plan.destroy if plan.user_id == current_user.id
+  end
 
+  def edit
+    @plan = Plan.find(params[:id])
+  end
+
+  def update
+    plan = Plan.find(params[:id])
+    if plan.user_id == current_user.id
+      plan.update(plan_params)
+    end
+  end
+
+  def search
+    @plan = Plan.where('destination LIKE(?)', "%#{params[:keyword]}%").limit(20)
   end
 
 
   private
-  def create_params
+  def plan_params
     params.require(:plan).permit(:destination, :month, :season, :number_of_nights, :transportation, :budget, :remarks)
   end
 
