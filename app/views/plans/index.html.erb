@@ -1,5 +1,7 @@
 <div class="contents">
     <h2>新着一覧</h2>
+  <br>
+
   <% @plans.each do |plan| %>
     <a href="/plans/<%= plan.id %>">
     <table>
@@ -22,10 +24,6 @@
       <tr>
         <td>予算</td>
         <td><%= plan.budget %></td>
-      </tr>
-      <tr>
-        <td>備考</td>
-        <td><%= plan.remarks %></td>
       </tr>
     </table>
   </a>
