@@ -24,11 +24,11 @@ before_action :move_to_root, except: :index
     # @suggestion_user = @sug.user
   end
 
-  # def show
-  #   @comment = Comment.new
-  #   @plan = Plan.find(params[:id])
-  #   @comments = @plan.comments
-  # end
+  def destroy
+    plan = plan.find(params[:id])
+    plan.destroy if plan.user_id == current_user.id
+
+  end
 
 
   private
