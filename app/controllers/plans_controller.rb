@@ -38,7 +38,7 @@ before_action :move_to_root, except: :index
   end
 
   def search
-    @plan = Plan.where('destination LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    @plans = Plan.where(destination: "#{params[:keyword]}").order('created_at DESC').page(params[:page]).per(5)
   end
 
 
