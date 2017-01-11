@@ -1,0 +1,46 @@
+<div class="contents">
+  <h3>planの行き先で検索</h3>
+  <h4>行先を選択してください</h4>
+  <%= form_tag('/plans/search', method: :get) do %>
+    <select  type="text" name="keyword">
+      <option></option>
+      <option>茨城</option>
+      <option>栃木</option>
+      <option>群馬</option>
+      <option>埼玉</option>
+      <option>千葉</option>
+      <option>東京</option>
+      <option>神奈川</option>
+    </select>
+  <button title="検索", type="submit">検索</button>
+  <% end %>
+  <br>
+  <h3>検索結果</h3>
+    <% @plans.each do |plan| %>
+    <a href="/plans/<%= plan.id %>">
+    <table>
+      <tr>
+        <td>行先</td>
+        <td><%= plan.destination %></td>
+      </tr>
+      <tr>
+        <td>時期</td>
+        <td><%= plan.month %><%= plan.season %></td>
+      </tr>
+      <tr>
+        <td>泊数</td>
+        <td><%= plan.number_of_nights %></td>
+      </tr>
+      <tr>
+        <td>交通手段</td>
+        <td><%= plan.transportation %></td>
+      </tr>
+      <tr>
+        <td>予算</td>
+        <td><%= plan.budget %></td>
+      </tr>
+    </table>
+    </a>
+    <% end %>
+  <%= paginate(@plans) %>
+</div>
