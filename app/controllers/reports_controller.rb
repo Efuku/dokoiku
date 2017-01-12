@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
   end
 
   def create
-    Report.create(destination: create_params[:destination], month: create_params[:month], season: create_params[:season], number_of_nights: create_params[:number_of_nights], transportation: create_params[:transportation], budget: create_params[:budget], text: create_params[:text], user_id: current_user.id)
+    Report.create(destination: report_params[:destination], month: report_params[:month], season: report_params[:season], number_of_nights: report_params[:number_of_nights], transportation: report_params[:transportation], budget: report_params[:budget], text: report_params[:text], user_id: current_user.id)
   end
 
   def show
@@ -22,8 +22,9 @@ class ReportsController < ApplicationController
 
 
 
+
 private
-  def create_params
+  def report_params
     params.require(:report).permit(:destination, :month, :season, :number_of_nights, :transportation, :budget, :text)
   end
 
