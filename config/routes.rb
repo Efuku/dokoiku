@@ -14,10 +14,11 @@ Rails.application.routes.draw do
 
   resources :suggestions, only: [:index]
   resources :users
-  resources :reports
-  # get "/plans/index" => 'plans#index'
-  # get "/plans/new" => 'plans#new'
-  # post "/plans/new" => 'plans#create'
+  resources :reports do
+    collection do
+      get 'search'
+    end
+  end
 
 
 

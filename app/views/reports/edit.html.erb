@@ -1,0 +1,17 @@
+<div class="contents">
+
+  <h3>投稿内容の編集</h3>
+
+  <%= form_for(@report) do |f| %>
+  <%= f.select :destination, ['茨城', '栃木', '群馬', '埼玉', '千葉', '東京', '神奈川'], {include_blank: '行き先を選択'} %>
+  <%= f.select :month, ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '未定'], include_blank: '月を選択' %>
+  <%= f.select :season, ['上旬', '中旬', '下旬', '未定'], include_blank: '時期を選択' %>
+  <%= f.select :number_of_nights, ['日帰り', '１泊', '２泊以上', '未定'], include_blank: '泊数を選択' %>
+  <%= f.select :transportation, ['電車・バス', '車', 'バイク', '自転車', '徒歩のみ'], include_blank: '交通手段を選択' %>
+  <%= f.select :budget, ['５千円以下', '１万円まで', '３万円まで', '３万円以上'], include_blank: '予算を選択' %>
+  <%= f.text_area :text, :maxlemgtth => "500", placeholder: '備考 500文字まで', :size => "80×60" %>
+
+      
+  <%= f.submit('更新する') %>
+  <% end %>
+</div>

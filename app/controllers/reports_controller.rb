@@ -17,6 +17,25 @@ class ReportsController < ApplicationController
     
   end
 
+  def edit
+    @report = Report.find(params[:id])
+  end
+
+  def update
+    report = Report.find(params[:id])
+    if report.user_id == current_user.id
+      report.update(report_params)
+    end
+  end
+
+  def destroy
+    report = Report.find(params[:id])
+    report.destroy if report.user_id == current_user.id
+  end
+
+  def search
+    @reports = Report.where(destination: "#{params[:keyword]}").order('created_at DESC').page(params[:page]).per(5)
+  end
 
 
 

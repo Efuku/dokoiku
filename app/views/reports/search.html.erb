@@ -1,7 +1,7 @@
 <div class="contents">
-  <h3>これまで投稿された要望の行き先で検索</h3>
-  <h4>行先を選択してください</h4>
-  <%= form_tag('/plans/search', method: :get) do %>
+  <h3>旅行先で検索</h3>
+  <h4>旅行先を選択してください</h4>
+  <%= form_tag('/reports/search', method: :get) do %>
     <select  type="text" name="keyword">
       <option></option>
       <option>茨城</option>
@@ -16,31 +16,31 @@
   <% end %>
   <br>
   <h3>検索結果</h3>
-    <% @plans.each do |plan| %>
-    <a href="/plans/<%= plan.id %>">
+    <% @reports.each do |report| %>
+    <a href="/reports/<%= report.id %>">
     <table>
       <tr>
         <td>行先</td>
-        <td><%= plan.destination %></td>
+        <td><%= report.destination %></td>
       </tr>
       <tr>
         <td>時期</td>
-        <td><%= plan.month %><%= plan.season %></td>
+        <td><%= report.month %><%= report.season %></td>
       </tr>
       <tr>
         <td>泊数</td>
-        <td><%= plan.number_of_nights %></td>
+        <td><%= report.number_of_nights %></td>
       </tr>
       <tr>
         <td>交通手段</td>
-        <td><%= plan.transportation %></td>
+        <td><%= report.transportation %></td>
       </tr>
       <tr>
         <td>予算</td>
-        <td><%= plan.budget %></td>
+        <td><%= report.budget %></td>
       </tr>
     </table>
     </a>
     <% end %>
-  <%= paginate(@plans) %>
+  <%= paginate(@reports) %>
 </div>
