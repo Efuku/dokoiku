@@ -3,7 +3,6 @@
   <br>
 
   <% @plans.each do |plan| %>
-    <a href="/plans/<%= plan.id %>">
     <table>
       <tr>
         <td>行先</td>
@@ -26,7 +25,7 @@
         <td><%= plan.budget %></td>
       </tr>
     </table>
-  </a>
+  <a href="/plans/<%= plan.id %>">この要望詳細を見る</a>
 
   <% end %>
   <%= paginate(@plans) %>

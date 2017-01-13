@@ -17,7 +17,7 @@
   <br>
   <h3>検索結果</h3>
     <% @reports.each do |report| %>
-    <a href="/reports/<%= report.id %>">
+    
     <table>
       <tr>
         <td>行先</td>
@@ -40,7 +40,7 @@
         <td><%= report.budget %></td>
       </tr>
     </table>
-    </a>
+    <a href="/reports/<%= report.id %>">この旅行記を見る</a>
     <% end %>
   <%= paginate(@reports) %>
 </div>

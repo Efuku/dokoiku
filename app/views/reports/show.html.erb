@@ -26,8 +26,10 @@
         <td><%= @report.budget %></td>
       </tr>
       <tr>
-        <td>旅行記</td>
-        <td><%= @report.text %></td>
+        <td colspan="2">旅行記</td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= simple_format(@report.text) %></td>
       </tr>
     </table>
 

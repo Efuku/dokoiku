@@ -30,8 +30,10 @@
         <td><%= @plan.budget %></td>
       </tr>
       <tr>
-        <td>備考</td>
-        <td><%= simple_format(@plan.remarks) %></td>
+        <td colspan="2">備考</td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= simple_format(@plan.remarks) %></td>
       </tr>
     </table>
 
